@@ -1,0 +1,27 @@
+{
+  "name": "interactive-mouse-effects-infrastructure",
+  "version": "1.0.0",
+  "description": "AWS CDK infrastructure for deploying Next.js app to CloudFront and S3",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "deploy": "cdk deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-cdk-lib": "^2.50.0",
+    "constructs": "^10.1.160",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.0",
+    "@types/node": "18.11.9",
+    "jest": "^29.2.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "~4.8.4"
+  }
+}
