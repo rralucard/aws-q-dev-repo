@@ -125,6 +125,22 @@ function bootstrapCdkEnvironment() {
   try {
     console.log('🔄 检查AWS CDK是否需要引导...');
     
+    // 确认CDK版本更新的通知
+    console.log('🔄 确认CDK CLI版本通知...');
+    try {
+      execSync('cd infrastructure && npx cdk acknowledge 32775', { stdio: 'ignore' });
+      console.log('✅ CDK版本通知已确认');
+    } catch (error) {
+      console.log('⚠️ 确认CDK版本通知失败，但继续进行部署流程');
+    }
+    
+    // 获取当前AWS账户ID和区域
+    console.log('🔄 获取AWS账户信息...');
+    const accountId = execSync('aws sts get-caller-identity --query Account --output text').toString().trim();
+    const region = execSync('aws configure get region').toString().trim();
+    const environment = `aws://${accountId}/${region}`;
+    console.log(`✅ 检测到AWS环境: ${environment}`);
+    
     // 检查是否已进行过引导
     try {
       execSync('cd infrastructure && npx cdk ls', { stdio: 'ignore' });
@@ -133,7 +149,7 @@ function bootstrapCdkEnvironment() {
     } catch (error) {
       // 需要引导
       console.log('🔄 开始引导AWS CDK环境...');
-      execSync('cd infrastructure && npx cdk bootstrap', { stdio: 'inherit' });
+      execSync(`cd infrastructure && npx cdk bootstrap ${environment}`, { stdio: 'inherit' });
       console.log('✅ AWS CDK环境引导完成');
       return true;
     }

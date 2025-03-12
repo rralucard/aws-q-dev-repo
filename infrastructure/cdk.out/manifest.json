@@ -1,0 +1,165 @@
+{
+  "version": "40.0.0",
+  "artifacts": {
+    "InteractiveMouseEffectsStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "InteractiveMouseEffectsStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "InteractiveMouseEffectsStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://778409058172/us-east-1",
+      "properties": {
+        "templateFile": "InteractiveMouseEffectsStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::778409058172:role/cdk-hnb659fds-deploy-role-778409058172-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::778409058172:role/cdk-hnb659fds-cfn-exec-role-778409058172-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-778409058172-us-east-1/d852e90cdff87dd803a8e65f31bda0724c6e389649c1b037e42e1f05f2db95eb.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "InteractiveMouseEffectsStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::778409058172:role/cdk-hnb659fds-lookup-role-778409058172-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "InteractiveMouseEffectsStack.assets"
+      ],
+      "metadata": {
+        "/InteractiveMouseEffectsStack/XXXXXXXXXXXXX/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "XXXXXXXXXXXXXFCFD6CD5"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/XXXXXXXXXXXXX/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "XXXXXXXXXXXXXPolicyC9AC42EB"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/XXXXXXXXXXXXX/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "XXXXXXXXXXXXXAutoDeleteObjectsCustomResource54EA1A06"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/OriginAccessIdentity/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OriginAccessIdentityDF1E3CAC"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Distribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Distribution830FAC52"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/XXXXXXXXXXXXXXXXX/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "XXXXXXXXXXXXXXXXXAwsCliLayer7BDC73B2"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/XXXXXXXXXXXXXXXXX/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "XXXXXXXXXXXXXXXXXCustomResource22EBE3BA"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/DistributionDomainName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DistributionDomainName"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/WebsiteBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebsiteBucketName"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/InteractiveMouseEffectsStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "InteractiveMouseEffectsStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

@@ -31,6 +31,8 @@ export class WebsiteStack extends cdk.Stack {
     const distribution = new cloudfront.Distribution(this, 'Distribution', {
       defaultRootObject: 'index.html',
       defaultBehavior: {
+        // TODO: S3Origin is deprecated, but direct replacement with S3BucketOrigin fails
+        // as it appears to be an abstract class. This should be updated in a future release.
         origin: new origins.S3Origin(websiteBucket, {
           originAccessIdentity,
         }),
@@ -49,7 +51,7 @@ export class WebsiteStack extends cdk.Stack {
     });
 
     // Deploy site contents to S3 bucket
-    new s3deploy.BucketDeployment(this, 'XXXXXXXXXXXXX', {
+    new s3deploy.BucketDeployment(this, 'XXXXXXXXXXXXXXXXX', {
       sources: [s3deploy.Source.asset(path.join(__dirname, '../..', 'out'))],
       destinationBucket: websiteBucket,
       distribution,
